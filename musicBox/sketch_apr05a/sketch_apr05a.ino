@@ -34,6 +34,12 @@ void setup() {
     pinMode(btnPin[i], INPUT_PULLUP);
   for(int i=0;i<btnLen;i++)
     pinMode(ledPin[i], OUTPUT);
+  tone(bzPin, 1000);
+  for(int i=1;i<=16;i*=2){
+    setLED(i);
+    delay(50);
+  }
+  noTone(bzPin);
 }
 
 void loop(){
